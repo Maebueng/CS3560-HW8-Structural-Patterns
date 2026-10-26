@@ -4,6 +4,6 @@ public class BitcoinPayment extends Payment{
     }
 
     public void makePayment() {
-
+        notification.sendMessage("Customer paid with bitcoin");
     }
 }
