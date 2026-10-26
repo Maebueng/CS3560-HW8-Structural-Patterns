@@ -11,4 +11,22 @@ public class PaymentTest {
             payment.makePayment();
         });
     }
+
+    @Test
+    public void testOnlinePaymentMethodWithSMS() {
+        Payment payment = new OnlinePayment(new SmsChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
+
+    @Test
+    public void testOnlinePaymentMethodwithPush() {
+        Payment payment = new OnlinePayment(new PushChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
 } // testing
