@@ -9,6 +9,17 @@ public class Driver {
 
         Payment onlinePaymentPush = new OnlinePayment(new PushChannel());
         onlinePaymentPush.makePayment();
+
+        System.out.println();
+
+        Payment cashPaymentEmail = new CashPayment(new EmailChannel());
+        cashPaymentEmail.makePayment();
+
+        Payment cashPaymentSMS = new CashPayment(new SmsChannel());
+        cashPaymentSMS.makePayment();
+
+        Payment cashPaymentPush = new CashPayment(new PushChannel());
+        cashPaymentPush.makePayment();
     }
 }
 
