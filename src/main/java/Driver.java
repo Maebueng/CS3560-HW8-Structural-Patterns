@@ -15,8 +15,13 @@ public class Driver {
         Payment cashPaymentSMS = new CashPayment(new SmsChannel());
         cashPaymentSMS.makePayment();
 
+        System.out.println();
 
+        Payment bitcoinPaymentEmail = new BitcoinPayment(new EmailChannel());
+        bitcoinPaymentEmail.makePayment();
 
-    }
-}
+        Payment bitcoinPaymentSMS = new BitcoinPayment(new SmsChannel());
+        bitcoinPaymentSMS.makePayment();
+    } // end main
+} // end Driver
 
