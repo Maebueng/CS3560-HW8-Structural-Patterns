@@ -34,9 +34,25 @@ public class PaymentTest {
     // Cash payment testing
     @Test
     public void testCashPaymentWithEmail() {
-        fail("CashPayment not implemented yet");
-
         Payment payment = new CashPayment(new EmailChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
+
+    @Test
+    public void testCashPaymentWithSMS() {
+        Payment payment = new CashPayment(new SmsChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
+
+    @Test
+    public void testCashPaymentWithPush() {
+        Payment payment = new CashPayment(new PushChannel());
 
         assertDoesNotThrow(() -> {
             payment.makePayment();

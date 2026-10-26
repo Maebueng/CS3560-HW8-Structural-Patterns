@@ -4,6 +4,6 @@ public class CashPayment extends Payment {
     }
 
     public void makePayment() {
-        // empty for red phase
+        notification.sendMessage("Customer paid with cash");
     }
 }
