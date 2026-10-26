@@ -59,5 +59,39 @@ public class PaymentTest {
         });
     }
 
+    // Bitcoin payment testing
+    @Test
+    public void bitcoinPaymentWithEmail() {
+        fail("Bitcoin Payment not yet implemented");
+
+        Payment payment = new BitcoinPayment(new EmailChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
+
+    @Test
+    public void bitcoinPaymentWithSMS() {
+        fail("Bitcoin Payment not yet implemented");
+
+        Payment payment = new BitcoinPayment(new SmsChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
+
+    @Test
+    public void bitcoinPaymentWithPush() {
+        fail("Bitcoin Payment not yet implemented");
+
+        Payment payment = new BitcoinPayment(new PushChannel());
+
+        assertDoesNotThrow(() -> {
+            payment.makePayment();
+        });
+    }
+
 
 } // end PaymentTest
