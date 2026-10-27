@@ -23,15 +23,16 @@ public class OrderingTest {
     }
 
     @Test
-    public void testComboMealWithLoyaltyDiscount() {
-        Food discountedComboOrder = new LoyaltyDiscountDecorator(comboOrder);
-        // original price = $8.50
-        // discounted price = $8.50 - 30% of 8.50 (2.55)
-        //                  = $8.50 - $2.55 = $5.95
+    public void testLoyaltyStatusDiscount() {
+        Order order = new Order();
+        order.addItem(new FriesDecorator(new CheeseDecorator(new BasicBurger())));
 
+        double total = order.calculateTotalCost();
 
-        assertEquals("A basic hamburger with a beef patty, with Cheese, with a side of Fries, " +
-                "and ordered while being part of our Loyalty Program", discountedComboOrder.getDescription());
-        assertEquals(5.95, discountedComboOrder.getCost(), 0.01);
+        // Test Gold status discount (30% off)
+        LoyaltyStatus goldStatus = new LoyaltyStatus("Gold");
+        double discountedTotal = goldStatus.applyDiscountBasedOnStatusLevel(total);
+
+        assertEquals(5.95, discountedTotal, 0.01);
     }
 }
