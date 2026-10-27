@@ -1,5 +1,13 @@
+import Bridge.*;
+import Decorator.*;
+
 public class Driver {
     public static void main (String[] args) {
+        runPaymentScenarios();
+
+    } // end main
+
+    private static void runPaymentScenarios() {
         // Instantiates new notification object with new EmailChannel()
         Payment onlinePaymentEmail = new OnlinePayment(new EmailChannel());
         onlinePaymentEmail.makePayment();
@@ -22,6 +30,11 @@ public class Driver {
 
         Payment bitcoinPaymentSMS = new BitcoinPayment(new SmsChannel());
         bitcoinPaymentSMS.makePayment();
-    } // end main
+    }
+
+    private static void runRestaurantOrderingScenarios() {
+
+    }
+
 } // end Driver
 
