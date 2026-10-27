@@ -13,6 +13,6 @@ public class LoyaltyDiscountDecorator implements Food {
 
     public double getCost() {
         // 30% discount
-        return decoratedFood.getCost() - (0.00 * decoratedFood.getCost());
+        return decoratedFood.getCost() - (0.30 * decoratedFood.getCost());
     }
 }
