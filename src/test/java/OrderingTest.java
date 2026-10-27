@@ -32,6 +32,6 @@ public class OrderingTest {
 
         assertEquals("A basic hamburger with a beef patty, with Cheese, with a side of Fries, " +
                 "and ordered while being part of our Loyalty Program", discountedComboOrder.getDescription());
-        assertEquals(5.95, comboOrder.getCost(), 0.01);
+        assertEquals(5.95, discountedComboOrder.getCost(), 0.01);
     }
 }
